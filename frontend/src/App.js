@@ -1,7 +1,22 @@
 import React from "react";
+import Headers from "./components/Headers";
+import { Container } from "react-bootstrap";
+import Footer from "./components/Footer";
+import HomeScreen from "./screens/HomeScreen";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
-  return <h1>Welcome to Pro shop</h1>;
+  return (
+    <>
+      <Headers />
+      <main className="py-3">
+        <Container>
+          <Outlet />
+        </Container>
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default App;
