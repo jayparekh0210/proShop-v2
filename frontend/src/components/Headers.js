@@ -11,7 +11,7 @@ const Headers = () => {
         <Container>
           <LinkContainer to={"/"}>
             <Navbar.Brand>
-              <img src={logo} /> Proshop
+              <img src={logo} /> Parekh shop
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

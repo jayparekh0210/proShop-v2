@@ -26,6 +26,16 @@ main {
 .remove-underline {
   list-style: none;
 }
+.Shimmer-haddding {
+  height: 20px;
+  width: 30%;
+  color: gray;
+}
+
+.shimmerCard {
+  background-color: gray;
+  height: 260px;
+}
 
 .btn-block {
   width: 100%;
