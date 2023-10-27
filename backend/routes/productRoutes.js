@@ -3,9 +3,6 @@ const {
   getAllProducts,
   getSpecificProduct,
 } = require("../controllers/productController");
-const Product = require("../models/productMoel");
-
-const asyncHandler = require("../middlewares/asyncHandeler");
 
 const productRouter = Express.Router();
 
