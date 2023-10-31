@@ -2,6 +2,7 @@ const Express = require("express");
 const products = require("./data/products");
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const productRpute = require("./routes/productRoutes");
 const userRoute = require("./routes/userRoutes");
 const cookieParse = require("cookie-parser");
@@ -17,6 +18,7 @@ const PORT = process.env.PORT || 5000;
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 app.use(cookieParse());
+app.use(cors({ origin: "http://localhost:3000" }));
 
 app.get("/", (req, res) => {
   res.send("API is Running....");

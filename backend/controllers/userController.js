@@ -2,11 +2,14 @@ const User = require("../models/userModel");
 const asyncHandler = require("../middlewares/asyncHandeler");
 const bycrpt = require("bcryptjs");
 const genrateToken = require("../helper/genrateToken");
+let passwordCheck = false;
 
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  const user = await User.findOne({ email: email });
-  const passwordCheck = bycrpt.compareSync(password, user.password);
+  let user = await User.findOne({ email: email });
+  if (user !== null) {
+    passwordCheck = bycrpt.compareSync(password, user.password);
+  }
 
   if (user && passwordCheck) {
     genrateToken(user, res);
