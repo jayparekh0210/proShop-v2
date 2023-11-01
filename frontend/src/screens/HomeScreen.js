@@ -17,6 +17,7 @@ const HomeScreen = () => {
 
   return (
     <>
+      {console.log("Home screen renderd")}
       <h1>Latest Product</h1>
       <Row>
         {products.length === 0 ? (

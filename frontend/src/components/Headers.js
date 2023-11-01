@@ -4,8 +4,10 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Slices/userSlice";
+import { clearCart } from "../Slices/cartSlice";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+
 const Headers = () => {
   const { items } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
@@ -21,10 +23,11 @@ const Headers = () => {
           "Content-Type": "application/json",
         },
       };
-      const res = await fetch("http://localhost:5000/api/user/login", reqOpt);
+      const res = await fetch("http://localhost:5000/api/user/logout", reqOpt);
       const resData = await res.json();
       console.log(resData);
       dispatch(logout());
+      dispatch(clearCart());
       navigate("/login");
     } catch (error) {
       console.log(error);
